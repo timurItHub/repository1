@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+header {
+    background-color: darkcyan;
+    color: #fff;
+    padding: 30px 50px;
+}
+section {
+    padding: 30px 50px;
+}
+h1 {
+    margin: 0;
+    text-align: center;
+}
+.top {
+    height: 200px;
+    /* background-image: linear-gradient(to top, lightblue, darkcyan); */
+    background-image: radial-gradient(circle, lightblue, darkcyan, lightblue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
+.bottom {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.item {
+    background-color: darkcyan;
+    height: 70px;
+    width: calc(25% - 15px);
+    color: #fff;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+@media print {
+    header, .item {
+        color: #000;
+        background-color: #fff;
+    }
+    header {
+        border-bottom: 1px solid;
+    }
+    .item {
+        outline: 1px solid;
+    }
+    .top {
+        background-image: none;
+    }
+}
+
+/* 
+braille - для людей с огр. возможностями
+oural - речевые синтезаторы
+print - принтер
+
+all 
+screen
+handheld - наладонные компьютеры(КПК)
+projection - проектор
+tty
+tv
+*/
+
+@media screen and (min-width: 700px) and (max-width: 992px) {
+    .top {
+        background-image: radial-gradient(circle, yellow, darkcyan, yellow);
+    }
+}
+    
+@media (max-width: 992px) {
+    .item {
+        width: calc((100% - 40px) / 3);
+    }
+    .bottom {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .item {
+        width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 300px) {
+    .item {
+        width: auto;
+    }
+    .bottom {
+        flex-direction: column;
+    }
+}
